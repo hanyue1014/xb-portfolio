@@ -1,7 +1,7 @@
 <template>
   <ul>
-    <HeaderLink link="#about">About</HeaderLink>
-    <HeaderLink link="#projects">Projects</HeaderLink>
+    <HeaderLink link="#about" :haveFocus="true">About</HeaderLink>
+    <HeaderLink link="#projects" :haveFocus="false">Projects</HeaderLink>
   </ul>
 </template>
 
@@ -19,6 +19,5 @@ export default {
 <style scoped>
 ul {
   list-style: none;
-  /* margin-right: 10px;  actually not what i wanna achieve*/
 }
 </style>

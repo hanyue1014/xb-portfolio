@@ -1,6 +1,6 @@
 <template>
   <li>
-    <a href="{{ link }}">
+    <a href="{{ link }}" :class="classObject">
       <slot>Default</slot>
     </a>
   </li>
@@ -10,7 +10,15 @@
 export default {
   name: 'HeaderLink',
   props: {
-    link: String
+    link: String,
+    haveFocus: Boolean
+  },
+  data() {
+    return {
+      classObject: {
+        active: this.haveFocus
+      }
+    }
   }
 }
 </script>
@@ -23,5 +31,14 @@ li {
 a {
   display: inline-block;
   padding: 10px;
+  text-decoration: none;
+  color: black;
 }
+
+/* a.active::after {
+  width: 50%;
+  height: 5px;
+  border-radius: 5000000px;
+  background-color: black;
+} not currently working */
 </style>
