@@ -1,6 +1,6 @@
 <template>
   <li>
-    <a href="{{ link }}" :class="classObject">
+    <a :href="link" :class="classObject">
       <slot>Default</slot>
     </a>
   </li>
@@ -25,20 +25,25 @@ export default {
 
 <style scoped>
 li {
-  display: inline;
+  display: inline-block;
 }
 
 a {
-  display: inline-block;
+  display: block;
   padding: 10px;
   text-decoration: none;
   color: black;
+  position:relative;
 }
 
-/* a.active::after {
-  width: 50%;
+.active::after {
+  content: '';
+  width: 20px;
   height: 5px;
-  border-radius: 5000000px;
+  border-radius: 5px;
   background-color: black;
-} not currently working */
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 10px); /* since width alrd know is 10px, this will send it to the middle */
+} 
 </style>
