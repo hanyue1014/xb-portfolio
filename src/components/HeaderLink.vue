@@ -13,13 +13,20 @@ export default {
     link: String,
     haveFocus: Boolean
   },
-  data() {
-    return {
-      classObject: {
+  computed: {
+    classObject() {
+      return {
         active: this.haveFocus
       }
     }
   }
+  // data() {
+  //   return {
+  //     classObject: {
+  //       active: this.haveFocus
+  //     }
+  //   }
+  // }
 }
 </script>
 
