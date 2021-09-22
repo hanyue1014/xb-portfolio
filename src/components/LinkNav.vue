@@ -3,14 +3,16 @@
     <HeaderLink 
       link="#about" 
       :haveFocus="active == 'abouts'"
-      @mouseover="changeActiveState"
+      @mouseover="tempChangeActiveState('abouts')"
+      @mouseleave="revertActive"
     >
       About
     </HeaderLink>
     <HeaderLink 
       link="#projects" 
       :haveFocus="active == 'projects'"
-      @mouseover="changeActiveState"
+      @mouseover="tempChangeActiveState('projects')"
+      @mouseleave="revertActive"
     >
       Projects
     </HeaderLink>
@@ -27,16 +29,22 @@ export default {
   },
   data() {
     return {
-      active: ''
+      active: '',
+      tempActive: ''
     }
   },
   methods: {
-    changeActiveState() {
+    changeActiveState(focusedNav) {
       // for now I just have two links, so not gonna worry about the reusability
-      if (this.active == 'abouts') {
-        this.active = 'projects'
-      } else {
-        this.active = 'abouts'
+      this.active = focusedNav
+    },
+    tempChangeActiveState(focusedNav) {
+      this.tempActive = this.active
+      this.changeActiveState(focusedNav)
+    },
+    revertActive() {
+      if (this.tempActive) {
+        this.changeActiveState(this.tempActive)
       }
     }
   }
