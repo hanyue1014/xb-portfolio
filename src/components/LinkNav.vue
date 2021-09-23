@@ -2,17 +2,19 @@
   <ul>
     <HeaderLink 
       link="#about" 
-      :haveFocus="active == 'abouts'"
+      :haveFocus="focused('abouts')"
       @mouseover="tempChangeActiveState('abouts')"
       @mouseleave="revertActive"
+      @click="setActive('abouts')"
     >
       About
     </HeaderLink>
     <HeaderLink 
       link="#projects" 
-      :haveFocus="active == 'projects'"
+      :haveFocus="focused('projects')"
       @mouseover="tempChangeActiveState('projects')"
       @mouseleave="revertActive"
+      @click="setActive('projects')"
     >
       Projects
     </HeaderLink>
@@ -30,12 +32,12 @@ export default {
   data() {
     return {
       active: '',
-      tempActive: ''
+      tempActive: '',
+      persistActive: '' // store which was persisted
     }
   },
   methods: {
     changeActiveState(focusedNav) {
-      // for now I just have two links, so not gonna worry about the reusability
       this.active = focusedNav
     },
     tempChangeActiveState(focusedNav) {
@@ -43,10 +45,28 @@ export default {
       this.changeActiveState(focusedNav)
     },
     revertActive() {
-      this.changeActiveState(this.tempActive)
-      this.tempActive = ''
+      // if there was already something that needs to be persisted, remain it
+      if (this.persistActive) {
+        this.changeActiveState(this.persistActive)
+      } else {
+        this.changeActiveState(this.tempActive)
+        this.tempActive = ''
+      }
+    },
+    setActive(clickedNav) {
+      this.persistActive = clickedNav
+      this.persist = true
+    },
+    focused(navToCheck) {
+      return this.active == navToCheck 
     }
   }
+  // decided that methods does a bttr job than this
+  // computed: {
+  //   focused() {
+  //     return this.active == ''
+  //   }
+  // }
 }
 </script>
 
