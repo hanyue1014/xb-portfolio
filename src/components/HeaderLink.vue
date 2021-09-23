@@ -43,14 +43,19 @@ a {
   position:relative;
 }
 
-.active::after {
+a::after {
   content: '';
-  width: 20px;
+  width: 0px;
   height: 5px;
   border-radius: 5px;
   background-color: black;
   position: absolute;
   bottom: 0;
-  left: calc(50% - 10px); /* since width alrd know is 10px, this will send it to the middle */
+  left: calc(50% - 10px); /* send it to middle */
+  transition: .1s;
+}
+
+.active::after {
+  width: 20px; 
 } 
 </style>
