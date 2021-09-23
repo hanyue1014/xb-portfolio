@@ -15,6 +15,6 @@ img {
   height: 32px;
   border-radius: 50%;
   border: 2px solid black;
-  margin: 4px 8px 0px 0px;
+  margin: 4px 15px 0px 0px;
 }
 </style>

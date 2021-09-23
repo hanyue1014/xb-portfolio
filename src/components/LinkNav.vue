@@ -43,9 +43,8 @@ export default {
       this.changeActiveState(focusedNav)
     },
     revertActive() {
-      if (this.tempActive) {
-        this.changeActiveState(this.tempActive)
-      }
+      this.changeActiveState(this.tempActive)
+      this.tempActive = ''
     }
   }
 }
