@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import LinkNav from './LinkNav.vue'
-import Profile from './Profile.vue'
+import LinkNav from './links/LinkNav.vue'
+import Profile from '../header/Profile.vue'
 
 export default {
   name: 'Header',
