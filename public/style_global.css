@@ -1,4 +1,10 @@
+:root {
+    /* declare commonly used colors */
+    --primary: rgb(0, 82, 82);
+}
+
 * {
     margin: 0;
     padding: 0;
+    color: var(--primary);
 }
