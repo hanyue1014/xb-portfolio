@@ -23,6 +23,8 @@ export default {
 .header {
   display: flex;
   width: 100vw;
+  position: absolute;
+  margin: 10px 0px;
   justify-content: space-between;
 }
 
