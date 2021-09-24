@@ -46,9 +46,9 @@ a {
 a::after {
   content: '';
   width: 0px;
-  height: 5px;
-  border-radius: 5px;
-  background-color: black;
+  height: 3.5px;
+  border-radius: 3.5px;
+  background-color: var(--primary);
   position: absolute;
   bottom: 0;
   left: calc(50% - 10px); /* send it to middle */
