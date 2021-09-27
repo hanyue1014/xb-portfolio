@@ -7,6 +7,7 @@
       </h1>
       <span>Xuan Bin</span>
       <h3>A student developer in Penang, Malaysia</h3>
+      <button class="learn-btn">Learn More</button>
     </div>
   </div>
 </template>
@@ -34,12 +35,33 @@ h1 {
   font-size: 4vw;
 }
 
-span {
-  font-size: 6vw;
-  font-weight: bold;
+h3 {
+  font-size: 2vw;
 }
 
 span {
-  color: rgb(0, 156, 204);
+  font-size: 6vw;
+  font-weight: bold;
+  color: var(--emphasis);
 }
+
+.learn-btn {
+  /* width: 6vw; */
+  /* height: 4vh; */
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 125%;
+  text-align: center;
+  color: var(--primary);
+  background-color: var(--emphasis);
+  border: 2px solid var(--primary);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.learn-btn:hover {
+  background-color: white;
+}
+
 </style>

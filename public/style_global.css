@@ -1,6 +1,7 @@
 :root {
     /* declare commonly used colors */
     --primary: rgb(0, 82, 82);
+    --emphasis: rgb(0, 156, 204);
 }
 
 * {
